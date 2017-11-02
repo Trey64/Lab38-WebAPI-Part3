@@ -70,5 +70,19 @@ namespace Week8Tom.Controllers
             return BadRequest();
 
         }
+
+        [HttpDelete("{int:id}")]
+        public async Task<IActionResult> Delete (int id)
+        {
+            var result = _context.HeroPowers.FirstOrDefault(d => d.Id == id);
+
+            if (result != null)
+            {
+                _context.HeroPowers.Remove(result);
+                await _context.SaveChangesAsync();
+                return Ok();
+            }
+            return BadRequest();
+        }
     }
 }
