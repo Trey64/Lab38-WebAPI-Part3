@@ -11,9 +11,10 @@ using Week8Tom.Data;
 namespace Week8Tom.Migrations
 {
     [DbContext(typeof(HeroStatsDbContext))]
-    partial class HeroStatsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171102182413_addHeroPowersTable2")]
+    partial class addHeroPowersTable2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
