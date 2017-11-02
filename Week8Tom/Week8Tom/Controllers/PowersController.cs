@@ -41,5 +41,15 @@ namespace Week8Tom.Controllers
             return Ok(power);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] HeroPowers list)
+        {
+            await _context.HeroPowers.AddAsync(list);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("Get", new { id = list.Id }, list);
+        }
+
+
     }
 }
