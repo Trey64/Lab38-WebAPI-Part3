@@ -15,5 +15,7 @@ namespace Week8Tom.Data
         }
 
         public DbSet<HeroStats> HeroStats { get; set; }
+        //adding new table
+        public DbSet<HeroStats> HeroPowers { get; set; }
     }
 }
