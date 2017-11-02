@@ -14,6 +14,7 @@ namespace Week8Tom.Models
         [MinLength(5)]
         public string Alias { get; set; }
         public string Name { get; set; }
+        public int PowersId { get; set; }
 
     }
 }
