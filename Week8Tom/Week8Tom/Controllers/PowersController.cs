@@ -50,6 +50,25 @@ namespace Week8Tom.Controllers
             return CreatedAtAction("Get", new { id = list.Id }, list);
         }
 
+        [HttpPut("{int:id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] HeroPowers list)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
+            var check = _context.HeroPowers.FirstOrDefault(p => p.Id == id);
+
+            if (check != null)
+            {
+                check.PowerName = list.PowerName;
+                _context.Update(check);
+                await _context.SaveChangesAsync();
+                return Ok();
+            }
+            return BadRequest();
+
+        }
     }
 }
