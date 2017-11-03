@@ -8,6 +8,8 @@ using Week8Tom.Models;
 
 namespace Week8Tom.Controllers
 {
+    //route token
+    [Route("api/[controller]")]
     public class PowersController : ControllerBase
     {
         private readonly HeroStatsDbContext _context;
